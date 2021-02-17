@@ -15,7 +15,7 @@ GDBFrontendLive.config = {};
 GDBFrontendLive.config.http_protocol = 'http';
 GDBFrontendLive.config.http_path = '/gdb-frontend-live-client';
 GDBFrontendLive.config.ws_protocol = 'ws';
-GDBFrontendLive.config.host = '192.168.1.102';
+GDBFrontendLive.config.host = window.location.hostname;
 GDBFrontendLive.config.port = 4551;
 
 GDBFrontendLive.config.instanceURLGenerator = function (parameters) {

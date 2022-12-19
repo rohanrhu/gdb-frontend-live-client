@@ -2,9 +2,11 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>GDBFrontend Live Debugger</title>
+    <title>DebugMe.online - Online C IDE / Debugger</title>
+    <meta name="description" content="Online C debugger/IDE based on GDBFrontend/GDBFrontendLive." />
 
     <link rel="shortcut icon" href="images/bug.png" />
+    <link rel="icon" type="image/x-icon" href="images/bug.png">
 
     <script type="text/javascript" src="thirdparty/jquery-3.4.1.min.js"></script>
 
@@ -27,13 +29,23 @@
     <link rel="stylesheet" type="text/css" href="css/override.css" />
 
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y05VNXF32H"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Y05VNXF32H');
+    </script>
 </head>
 <body>
     <div class="GDBFrontendLive">
         <div class="GDBFrontendLive_menu">
             <div class="GDBFrontendLive_menu_logo">
-                <a href="https://github.com/rohanrhu/gdb-frontend-live" title="GDBFrontendLive Github Repository" target="_blank">
-                    GFLIVE
+                <a href="/" title="Online C IDE Debugger" target="_blank">
+                    debugme.online
                 </a>
             </div>
             <div class="GDBFrontendLive_menu_desc">

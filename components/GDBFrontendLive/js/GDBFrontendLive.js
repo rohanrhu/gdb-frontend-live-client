@@ -80,9 +80,17 @@
                     }
                     
                     data.socket.send(JSON.stringify(message));
+
+                    setInterval(() => {
+                        data.socket.send(JSON.stringify({action: 'ping'}));
+                    }, 10000);
                 };
                 
                 data.socket.onclose = function (event) {
+                };
+                
+                data.socket.onerror = function (event) {
+                    // window.location.reload();
                 };
                 
                 data.socket.onmessage = function (event) {

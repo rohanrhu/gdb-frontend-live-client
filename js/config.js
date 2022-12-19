@@ -19,9 +19,9 @@ GDBFrontendLive.config.host = window.location.hostname;
 GDBFrontendLive.config.port = 4551;
 
 GDBFrontendLive.config.instanceURLGenerator = function (parameters) {
-    return GDBFrontendLive.config.http_protocol+'://'+GDBFrontendLive.config.host+GDBFrontendLive.config.http_path+'/#'+JSON.stringify({id: parameters.instance.id});
+    return 'http://'+GDBFrontendLive.config.host+'/#'+JSON.stringify({id: parameters.instance.id});
 };
 
 GDBFrontendLive.config.gfURLGenerator = function (parameters) {
-    return 'http://'+GDBFrontendLive.config.host+':'+parameters.instance.http_port+'/terminal/';
+    return 'http://'+GDBFrontendLive.config.host+'/gf/'+parameters.instance.http_port+'/';
 };

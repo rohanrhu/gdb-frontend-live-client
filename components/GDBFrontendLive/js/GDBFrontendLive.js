@@ -60,7 +60,7 @@
                     parameters = {};
                 }
 
-                data.socket = new WebSocket(data.ws_protocol+'://'+data.host+':'+data.port.toString());
+                data.socket = new WebSocket(data.ws_protocol+'://'+data.host+'/gflive/ws/');
 
                 data.socket.onopen = function (event) {
                     data.$GDBFrontendLive_debugger_loading.css('display', 'flex');

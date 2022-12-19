@@ -18,10 +18,15 @@ GDBFrontendLive.config.ws_protocol = 'ws';
 GDBFrontendLive.config.host = window.location.hostname;
 GDBFrontendLive.config.port = 4551;
 
+var port = window.location.port;
+if (port) {
+    port = ':'+port;
+}
+
 GDBFrontendLive.config.instanceURLGenerator = function (parameters) {
-    return 'http://'+GDBFrontendLive.config.host+'/#'+JSON.stringify({id: parameters.instance.id});
+    return 'http://'+GDBFrontendLive.config.host+port+'/#'+JSON.stringify({id: parameters.instance.id});
 };
 
 GDBFrontendLive.config.gfURLGenerator = function (parameters) {
-    return 'http://'+GDBFrontendLive.config.host+'/gf/'+parameters.instance.http_port+'/';
+    return 'http://'+GDBFrontendLive.config.host+port+'/gf/'+parameters.instance.http_port+'/';
 };

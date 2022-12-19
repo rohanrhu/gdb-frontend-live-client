@@ -60,7 +60,12 @@
                     parameters = {};
                 }
 
-                data.socket = new WebSocket(data.ws_protocol+'://'+data.host+'/gflive/ws/');
+                var port = window.location.port;
+                if (port) {
+                    port = ':'+port;
+                }
+
+                data.socket = new WebSocket(data.ws_protocol+'://'+data.host+port+'/gflive/ws/');
 
                 data.socket.onopen = function (event) {
                     data.$GDBFrontendLive_debugger_loading.css('display', 'flex');
@@ -70,7 +75,7 @@
                     try {
                         var url_parameters = !window.location.hash.length ? {}: JSON.parse(decodeURIComponent(window.location.hash).substr(1));
                     } catch (error) {
-                        window.location = data.http_protocol+'://'+data.host+data.http_path;
+                        window.location = data.http_protocol+'://'+data.host+port+data.http_path;
                     }
                     
                     if (url_parameters.hasOwnProperty('id')) {
@@ -112,7 +117,7 @@
                         var instance_url;
 
                         if (!data.instanceURLGenerator) {
-                            instance_url = data.http_protocol+'://'+data.host+data.http_path+'/#'+JSON.stringify({id: data.instance.id});
+                            instance_url = data.http_protocol+'://'+data.host+port+data.http_path+'/#'+JSON.stringify({id: data.instance.id});
                         } else {
                             instance_url = data.instanceURLGenerator({instance: data.instance});
                         }
